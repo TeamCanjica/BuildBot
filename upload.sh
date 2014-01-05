@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Upload fails counter
+count=0
+
 # DevHost informations : Nickname, password and upload folder
 if [ -z "$DH_PASSWORD" ] || [ -z "$DH_USER" ]
 then
@@ -27,23 +30,36 @@ else
   esac
 fi
 
-# Start upload
-if [ $SINGLE_PACKAGE = "true" ]
-then
-  if [ $KERNEL_ONLY = "true" ]
-  then
-    export UL_PATH="$WORKSPACE/$ROM_NAME/out/target/product/$DEVICE/boot.img"
-  else
-    export UL_PATH=`find $WORKSPACE/$ROM_NAME/out/target/product/$DEVICE/ -name $PACKAGE_NAME*`
-  fi
-  time devhost -u $DH_USER -p $DH_PASSWORD upload  $UL_PATH -f $FOLDER -d $DESC -pb  $DH_PUB
-else
-  time devhost -u $DH_USER -p $DH_PASSWORD upload  $WORKSPACE/$ROM_NAME/out/target/product/$DEVICE/$ROM_NAME-*.zip -f $FOLDER -d $DESC -pb  $DH_PUB
-fi
-
-# Check if upload is finished corectly
-if [ "0" -ne "$?" ]
-then
-  echo -e $CL_RED"Upload failed."$CL_RST
-  exit 1
-fi
+# Start upload function
+upload() {
+    
+    if [ $SINGLE_PACKAGE = "true" ]
+    then
+      if [ $KERNEL_ONLY = "true" ]
+      then
+        export UL_PATH="$WORKSPACE/$ROM_NAME/out/target/product/$DEVICE/boot.img"
+      else
+        export UL_PATH=`find $WORKSPACE/$ROM_NAME/out/target/product/$DEVICE/ -name $PACKAGE_NAME*`
+      fi
+      time devhost -u $DH_USER -p $DH_PASSWORD upload  $UL_PATH -f $FOLDER -d $DESC -pb  $DH_PUB
+    else
+      time devhost -u $DH_USER -p $DH_PASSWORD upload  $WORKSPACE/$ROM_NAME/out/target/product/$DEVICE/$ROM_NAME-*.zip -f $FOLDER -d $DESC -pb  $DH_PUB
+    fi
+    
+    # Check if upload is finished corectly
+    if [ "0" -ne "$?" ]
+    then
+      
+      if [[ $count -lt 3 ]]
+      then {
+          # Upload fails counter
+          echo -e $CL_RED"Upload failed, trying again ($count)..."$CL_RST
+          count=`expr $count + 1`
+          upload
+      } else {
+          # Exit with error
+          echo -e $CL_RED"Upload failed."$CL_RST
+          exit 1
+      } fi
+    fi
+}
