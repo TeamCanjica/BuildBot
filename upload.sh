@@ -34,7 +34,7 @@ then
   then
     export UL_PATH="$WORKSPACE/$ROM_NAME/out/target/product/$DEVICE/boot.img"
   else
-    export UL_PATH=`find -name $PACKAGE_NAME`
+    export UL_PATH=`find $WORKSPACE/$ROM_NAME/out/target/product/$DEVICE/ -name $PACKAGE_NAME*`
   fi
   time devhost -u $DH_USER -p $DH_PASSWORD upload  $UL_PATH -f $FOLDER -d $DESC -pb  $DH_PUB
 else
