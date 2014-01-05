@@ -5,7 +5,7 @@ First starting on Jenkins
 
 Execute shell :
 
-      git clone https://github.com/TeamCanjica/Jenkins_BuildBot.git
+      git clone https://github.com/TeamCanjica/BuildBot.git
       
 After that 
 
@@ -14,7 +14,7 @@ Execute shell:
       export DH_USER=****
       export DH_PASSWORD=****
       
-      $WORKSPACE/Jenkins_BuildBot/job.sh
+      $WORKSPACE/BuildBot/job.sh
       
 Parameters:
 
