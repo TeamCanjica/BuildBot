@@ -50,7 +50,7 @@ then
 
 fi
  
-if [ "$REPO_BRANCH" = "cm-11.0" ] || [ "$REPO_BRANCH" = "omni-4.4" ]
+if [ "$REPO_BRANCH" = "cm-11.0" ] || [ "$REPO_BRANCH" = "cm-11.0-test" ] || [ "$REPO_BRANCH" = "omni-4.4" ]
 then
   echo -e $CL_BLU"Cherrypicking ART fix"$CL_RST
   cd art
@@ -58,7 +58,7 @@ then
   git cherry-pick fc2ac71d0d9e147c607bff9371fe2ef25d8470af
   cd ..
 
-  if [ "$REPO_BRANCH" = "cm-11.0" ]
+  if [ "$REPO_BRANCH" = "cm-11.0" ] || [ "$REPO_BRANCH" = "cm-11.0-test" ]
   then
     echo -e $CL_BLU"Cherrypicking older recoveries compatibility, not merged yet"$CL_RST
     cd build
