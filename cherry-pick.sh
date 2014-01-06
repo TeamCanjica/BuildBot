@@ -65,6 +65,11 @@ then
     git fetch http://review.cyanogenmod.org/CyanogenMod/android_build refs/changes/59/53559/4
     git cherry-pick FETCH_HEAD
     cd ..
+    echo -e $CL_BLU"Cherrypicking vold patch to allow switching storages"$CL_RST
+    cd system/vold
+    git fetch http://review.cyanogenmod.org/CyanogenMod/android_system_vold refs/changes/15/56515/2
+    git cherry-pick FETCH_HEAD
+    cd ../..
   fi
 
 fi
