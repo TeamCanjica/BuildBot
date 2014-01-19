@@ -24,4 +24,5 @@ if [ $UPLOAD = "true" ]
 then
   echo -e $CL_BLU"Uploading..."$CL_RST
   . $WORKSPACE/BuildBot/upload.sh
+  echo -e $CL_GRN"Upload finished!"$CL_RST
 fi

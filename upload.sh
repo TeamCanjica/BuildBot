@@ -44,6 +44,6 @@ fi
 # Check if upload is finished corectly
 if [ "0" -ne "$?" ]
 then
-  echo -e $CL_RED"Upload failed."$CL_RST
+  echo -e $CL_RED"Upload failed."
   exit 1
 fi
