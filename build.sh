@@ -5,7 +5,7 @@ function check_result {
   if [ "0" -ne "$?" ]
   then
     (repo forall -c "git reset --hard") >/dev/null
-    echo $1
+    echo $CL_RED$1
     exit 1
   fi
 }
@@ -32,16 +32,16 @@ then
   rm -rf .repo/manifests*
   rm -f .repo/local_manifests/dyn-*.xml
   repo init -u https://github.com/TeamCanjica/android.git -b $REPO_BRANCH
-  check_result $CL_RED"Repo init failed!"
+  check_result "Repo init failed!"
   echo -e $CL_BLU"Syncing..."$CL_RST
   repo sync -f -d -c > /dev/null
-  check_result $CL_RED"Repo sync failed!"
+  check_result "Repo sync failed!"
   echo -e $CL_GRN"Sync complete."$CL_RST
 fi
 
 # Cherrypicking
 . $WORKSPACE/BuildBot/cherry-pick.sh
-check_result $CL_RED"Cherrypicking failed!"
+check_result "Cherrypicking failed!"
 echo -e $CL_GRN"Cherrypicking Complete"$CL_RST
 
 # Get prebuilts
@@ -53,7 +53,7 @@ fi
 # Set environment and lunch
 . build/envsetup.sh
 lunch $LUNCH
-check_result $CL_RED"Lunch failed!"
+check_result "Lunch failed!"
 
 # Clean
 if [ $CLEAN = "true" ]
@@ -64,7 +64,7 @@ then
 else
   echo -e $CL_YLW"Cleaning skipped, removing only last built package."$CL_RST
   rm -f out/target/product/$DEVICE/cm-*
-  rm out/target/product/$DEVICE/system/build.prop
+  rm -f out/target/product/$DEVICE/system/build.prop
 fi
 
 # Start Build
@@ -77,12 +77,12 @@ then
   else
     echo -e $CL_BLU"Building single package only: $PACKAGE_NAME"$CL_RST
     time mka $PACKAGE_NAME
-    check_result $CL_RED"Build failed!"
+    check_result "Build failed!"c
     echo -e $CL_GRN"Package build finished!"$CL_RST
   fi
 else
   echo -e $CL_MAG"Building..."$CL_RST
   time make -j8 bacon
-  check_result $CL_RED"Build failed!"
+  check_result "Build failed!"
   echo -e $CL_GRN""$DEVICE" build finished!"$CL_RST
 fi
