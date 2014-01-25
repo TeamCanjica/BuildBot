@@ -32,7 +32,13 @@ if [ $SINGLE_PACKAGE = "true" ]
 then
   if [ $KERNEL_ONLY = "true" ]
   then
-    export UL_PATH="$WORKSPACE/$ROM_NAME/out/target/product/$DEVICE/boot.img"
+    cd $WORKSPACE/$ROM_NAME/out/target/product/$DEVICE
+    mkdir Kernel_only
+    cp boot.img Kernel_only
+    cp $WORKSPACE/$ROM_NAME/out/target/product/$DEVICE/system/lib/modules/* Kernel_only
+    cd Kernel_only
+    zip -r Kernel.zip .
+    export UL_PATH="$WORKSPACE/$ROM_NAME/out/target/product/$DEVICE/Kernel_only/Kernel.zip"
   else
     export UL_PATH=`find $WORKSPACE/$ROM_NAME/out/target/product/$DEVICE/ -name $PACKAGE_NAME*`
   fi
