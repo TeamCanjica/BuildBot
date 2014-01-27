@@ -33,16 +33,21 @@ fi
 
 # Rom name and build directory
 case $REPO_BRANCH in
+
+
 "cm-"*)
-  export ROM_NAME="cm"
-  ;;
+  export ROM_NAME="cm"  ;;
+  
+"jellybean"*)
+  export ROM_NAME="cm"  ;;
+  
 "omni-"*)
-  export ROM_NAME="omni"
-  ;;
+  export ROM_NAME="omni"  ;;
+
 *)
   echo  -e $CL_RED"ROM not supported. Define ROM name in variables.sh."$CL_RST
-  exit 1
-  ;;
+  exit 1  ;;
+  
 esac
 
 # Device name to build
