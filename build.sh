@@ -17,8 +17,15 @@ export LIBRARY_PATH=/usr/lib/x86_64-linux-gnu
 export USE_CCACHE=1
 export CCACHE_NLEVELS=4
 export PATH=~/bin:$PATH
-export CCACHE_DIR=~/.ccache
 export PATH="$PATH:/opt/local/bin/:$WORKSPACE/$ROM_NAME/prebuilts/misc/$(uname|awk '{print tolower($0)}')-x86/ccache"
+case $REPO_BRANCH in
+"cm-10"* | "omni-4.3" )
+  export CCACHE_DIR=~/.jb_ccache  ;;
+"cm-11"* | "omni-4.4" )
+  export CCACHE_DIR=~/.kk_ccache  ;;
+*)
+  export CCACHE_DIR=~/.kk_ccache  ;;
+esac
 ccache -M 50G
 
 # Build directory
