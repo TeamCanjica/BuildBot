@@ -36,6 +36,7 @@ cd $JENKINS_BUILD_DIR
 # Syncing
 if [ $SYNC = "true" ]
 then
+  rm -rf kernel/*
   rm -rf .repo/manifests*
   rm -f .repo/local_manifests/dyn-*.xml
   repo init -u https://github.com/TeamCanjica/android.git -b $REPO_BRANCH
