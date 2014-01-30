@@ -33,10 +33,10 @@ then
   if [ $KERNEL_ONLY = "true" ]
   then
     cd $WORKSPACE/$ROM_NAME/out/target/product/$DEVICE
-    mkdir Kernel_only
+    mkdir Kernel_only/modules
     cp boot.img Kernel_only
-    cp $WORKSPACE/$ROM_NAME/out/target/product/$DEVICE/system/lib/modules/* Kernel_only
     cd Kernel_only
+    cp $WORKSPACE/$ROM_NAME/out/target/product/$DEVICE/system/lib/modules/* modules
     zip -r Kernel.zip .
     export UL_PATH="$WORKSPACE/$ROM_NAME/out/target/product/$DEVICE/Kernel_only/Kernel.zip"
   else
