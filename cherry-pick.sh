@@ -75,6 +75,11 @@ then
 
   if [ "$REPO_BRANCH" = "cm-11.0" ] || [ "$REPO_BRANCH" = "cm-11.0-test" ]
   then
+    echo -e $CL_BLU"Cherrypicking OMX Patch - android_frameworks_base"$CL_RST
+    cd frameworks/base
+    git fetch https://github.com/TeamCanjica/android_frameworks_base cm-11.0
+    git cherry-pick 3826055d49ec70ab3d0e130a8e444fd334806fa5
+    cd ../..
     echo -e $CL_BLU"Cherrypicking vold patch to allow switching storages"$CL_RST
     cd system/vold
     git fetch http://review.cyanogenmod.org/CyanogenMod/android_system_vold refs/changes/15/56515/2
