@@ -42,7 +42,7 @@ then
   repo init -u https://github.com/TeamCanjica/android.git -b $REPO_BRANCH
   check_result "Repo init failed!"
   echo -e $CL_BLU"Syncing..."$CL_RST
-  repo sync -f -d -c > /dev/null
+  repo sync -f -d -c
   check_result "Repo sync failed!"
   echo -e $CL_GRN"Sync complete."$CL_RST
 fi
