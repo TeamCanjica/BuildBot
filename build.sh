@@ -24,7 +24,7 @@ case $REPO_BRANCH in
 "cm-11"* | "omni-4.4" )
   export CCACHE_DIR=~/.kk_ccache  ;;
 *)
-  export CCACHE_DIR=~/.kk_ccache  ;;
+  export CCACHE_DIR=~/.ccache  ;;
 esac
 ccache -M 50G
 
