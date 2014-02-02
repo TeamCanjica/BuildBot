@@ -41,6 +41,9 @@ case $REPO_BRANCH in
 "jellybean"*)
   export ROM_NAME="cm"  ;;
   
+"phablet"*)
+  export ROM_NAME="cm"  ;;
+  
 "omni-"*)
   export ROM_NAME="omni"  ;;
 
