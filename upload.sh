@@ -33,6 +33,7 @@ then
   if [ $KERNEL_ONLY = "true" ]
   then
     cd $WORKSPACE/$ROM_NAME/out/target/product/$DEVICE
+    rm -rf Kernel_only
     mkdir Kernel_only
     cp boot.img Kernel_only/boot.img
     cd Kernel_only
