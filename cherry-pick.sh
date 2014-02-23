@@ -121,8 +121,17 @@ then
     echo -e $CL_BLU"Cherrypicking OMX Patch - android_frameworks_native"$CL_RST
     cd native
     git fetch https://github.com/TeamCanjica/omni_frameworks_native android-4.4
-    git cherry-pick 8a816338d30122a07a54a6b59af6d5d0c385b23d
-    git cherry-pick 470fdab1c1c6f0060f7b17b72adc9daf0f14fcce
+    git cherry-pick bc510337185c26ec5e8c9a806670b0f12d07ade2
+    cd ../..
+    echo -e $CL_BLU"Cherrypicking vold patch to allow switching storages"$CL_RST
+    cd system/vold
+    git fetch http://github.com/TeamCanjica/omni_system_vold android-4.4
+    git cherry-pick e241d065c40385713c0628601a62f0d01fd20100
+    cd ../..
+    echo -e $CL_BLU"Cherrypicking vibrator fix"$CL_RST
+    cd hardware/libhardware_legacy
+    git fetch https://github.com/TeamCanjica/omni_hardware_legacy android-4.4
+    git cherry-pick 2e71ea08a201040727f1e82768e9e50e1cf44fe9
     cd ../..
   fi
 
