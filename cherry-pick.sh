@@ -118,6 +118,7 @@ then
     cd frameworks/av
     git fetch https://github.com/TeamCanjica/omni_frameworks_av android-4.4
     git cherry-pick d42dde0c2cc4968728afd7547b95a8ace1dc7827
+    git cherry-pick 471d848250d3b20b0ee8d0b9d79b8a7a92c4df55
     cd ..
     echo -e $CL_BLU"Cherrypicking OMX Patch - android_frameworks_native"$CL_RST
     cd native
