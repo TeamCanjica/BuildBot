@@ -130,7 +130,7 @@ then
     cd ../..
     echo -e $CL_BLU"Cherrypicking vibrator fix"$CL_RST
     cd hardware/libhardware_legacy
-    git fetch https://github.com/TeamCanjica/omni_hardware_legacy android-4.4
+    git fetch https://github.com/TeamCanjica/omni_hardware_libhardware_legacy android-4.4
     git cherry-pick 2e71ea08a201040727f1e82768e9e50e1cf44fe9
     cd ../..
   fi
