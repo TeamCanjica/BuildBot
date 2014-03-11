@@ -67,11 +67,6 @@ fi
  
 if [ "$REPO_BRANCH" = "cm-11.0" ] || [ "$REPO_BRANCH" = "omni-4.4" ]
 then
-  echo -e $CL_BLU"Cherrypicking ART fix"$CL_RST
-  cd art
-  git fetch https://github.com/cernekee/android_art monitor-stack-v1
-  git cherry-pick fc2ac71d0d9e147c607bff9371fe2ef25d8470af
-  cd ..
   echo -e $CL_BLU"Cherrypicking OMX Patch - android_frameworks_base"$CL_RST
   cd frameworks/base
   git fetch https://github.com/TeamCanjica/android_frameworks_base cm-11.0
@@ -86,6 +81,11 @@ then
 
   if [ "$REPO_BRANCH" = "cm-11.0" ]
   then
+    echo -e $CL_BLU"Cherrypicking ART fix"$CL_RST
+    cd art
+    git fetch https://github.com/cernekee/android_art monitor-stack-v1
+    git cherry-pick fc2ac71d0d9e147c607bff9371fe2ef25d8470af
+    cd ..
     echo -e $CL_BLU"Cherrypicking OMX Patch - android_frameworks_av"$CL_RST
     cd frameworks/av
     git fetch https://github.com/TeamCanjica/android_frameworks_av cm-11.0
