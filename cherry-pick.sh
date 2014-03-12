@@ -122,7 +122,12 @@ then
     cd native
     git fetch https://github.com/TeamCanjica/omni_frameworks_native android-4.4
     git cherry-pick 58bfb612bc026521d43dbb80802fd2c009b034c9
-    cd ../..
+    cd ..
+    echo -e $CL_BLU"Cherrypicking RIL build error fix"$CL_RST
+    cd opt/telephony
+    git fetch https://github.com/TeamCanjica/omni_frameworks_opt_telephony android-4.4
+    git cherry-pick 5e09e67658d95db425d3684e65fbcf73a3705a5b
+    cd ../../..
     echo -e $CL_BLU"Cherrypicking vold patch to allow switching storages"$CL_RST
     cd system/vold
     git fetch http://github.com/TeamCanjica/omni_system_vold android-4.4
