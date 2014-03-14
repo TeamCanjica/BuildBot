@@ -94,6 +94,7 @@ then
     git cherry-pick 7effcc29536098aea6a251d7c37064e3b7dd0587
     git cherry-pick 66b67043f3adef5af7e8c436272c3c45a524a1b9
     git cherry-pick f85821d4d3ee696d71268c567be580767da74365
+    git cherry-pick 5dbc8602fc4b76c64c9694e83703d25264da6c70
     cd ../..
     echo -e $CL_BLU"Cherrypicking vold patch to allow switching storages"$CL_RST
     cd system/vold
