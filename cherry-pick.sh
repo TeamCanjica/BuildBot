@@ -67,11 +67,6 @@ fi
  
 if [ "$REPO_BRANCH" = "cm-11.0" ] || [ "$REPO_BRANCH" = "omni-4.4" ]
 then
-  echo -e $CL_BLU"Cherrypicking OMX Patch - android_frameworks_base"$CL_RST
-  cd frameworks/base
-  git fetch https://github.com/TeamCanjica/android_frameworks_base cm-11.0
-  git cherry-pick 3826055d49ec70ab3d0e130a8e444fd334806fa5
-  cd ../..
   echo -e $CL_BLU"Cherrypicking Core Patch - OMX and reboot/shutdown fix"$CL_RST
   cd system/core
   git fetch https://github.com/TeamCanjica/android_system_core cm-11.0
@@ -98,6 +93,7 @@ then
     git cherry-pick ccb57796df7b3f39dbf7dce58d7ab837ff630245
     git cherry-pick 7effcc29536098aea6a251d7c37064e3b7dd0587
     git cherry-pick 66b67043f3adef5af7e8c436272c3c45a524a1b9
+    git cherry-pick f85821d4d3ee696d71268c567be580767da74365
     cd ../..
     echo -e $CL_BLU"Cherrypicking vold patch to allow switching storages"$CL_RST
     cd system/vold
@@ -116,6 +112,11 @@ then
     cd ..
   elif [ "$REPO_BRANCH" = "omni-4.4" ]
   then
+    echo -e $CL_BLU"Cherrypicking OMX Patch - android_frameworks_base"$CL_RST
+    cd frameworks/base
+    git fetch https://github.com/TeamCanjica/android_frameworks_base cm-11.0
+    git cherry-pick 3826055d49ec70ab3d0e130a8e444fd334806fa5
+    cd ../..
     echo -e $CL_BLU"Cherrypicking OMX Patch - android_frameworks_av"$CL_RST
     cd frameworks/av
     git fetch https://github.com/TeamCanjica/omni_frameworks_av android-4.4
