@@ -76,7 +76,7 @@ then
   echo -e $CL_BLU"Cherrypicking OK Google patch"$CL_RST
   cd frameworks/base
   git fetch https://github.com/TeamCanjica/android_frameworks_base cm-11.0
-  git cherry-pick hbb9d91d07fdc20c2443c9668e2f20e392b25bac4
+  git cherry-pick bb9d91d07fdc20c2443c9668e2f20e392b25bac4
   cd ../..
 
   if [ "$REPO_BRANCH" = "cm-11.0" ]
