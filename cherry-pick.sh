@@ -101,6 +101,10 @@ then
     git fetch http://review.cyanogenmod.org/CyanogenMod/android_system_vold refs/changes/15/56515/2
     git cherry-pick FETCH_HEAD
     cd ../..
+    cd frameworks/base
+    git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_base refs/changes/50/56950/4
+    git cherry-pick FETCH_HEAD
+    cd ../..
     echo -e $CL_BLU"Cherrypicking vibrator fix"$CL_RST
     cd hardware/libhardware_legacy
     git fetch https://github.com/TeamCanjica/android_hardware_libhardware_legacy cm-11.0
