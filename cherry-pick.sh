@@ -95,6 +95,9 @@ then
     cd native
     git fetch https://github.com/TeamCanjica/android_frameworks_native cm-11.0
     git cherry-pick 8dd8f0c8b8872affa37a2f50953f07d4815f2fec
+    echo -e $CL_BLU"Cherrypicking Legacy sensors"$CL_RST
+    git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_native refs/changes/11/59311/1
+    git cherry-pick FETCH_HEAD
     cd ../..
     echo -e $CL_BLU"Cherrypicking vold patch to allow switching storages"$CL_RST
     cd system/vold
