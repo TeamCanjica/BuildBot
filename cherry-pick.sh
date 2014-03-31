@@ -77,9 +77,6 @@ then
   cd frameworks/base
   git fetch https://github.com/TeamCanjica/android_frameworks_base cm-11.0
   git cherry-pick bb9d91d07fdc20c2443c9668e2f20e392b25bac4
-  echo -e $CL_BLU"Cherrypicking LocationManagerService FC fix"$CL_RST
-  git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_base refs/changes/82/61182/1
-  git cherry-pick FETCH_HEAD
   cd ../..
 
   if [ "$REPO_BRANCH" = "cm-11.0" ]
