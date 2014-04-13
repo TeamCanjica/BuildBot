@@ -145,6 +145,11 @@ then
     git fetch http://github.com/TeamCanjica/omni_system_vold android-4.4
     git cherry-pick e241d065c40385713c0628601a62f0d01fd20100
     cd ../..
+    echo -e $CL_BLU"Cherrypicking Low-InCall fix"$CL_RST
+    cd packages/services/Telephony
+    git fetch https://github.com/TeamCanjica/omni_packages_services_Telephony android-4.4
+    git cherry-pick 167b42ab759bf5c9612cf81d8e2a9315534dd3c8
+    cd ../../..
     echo -e $CL_BLU"Cherrypicking vibrator fix"$CL_RST
     cd hardware/libhardware_legacy
     git fetch https://github.com/TeamCanjica/omni_hardware_libhardware_legacy android-4.4
