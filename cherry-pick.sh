@@ -135,7 +135,7 @@ then
     echo -e $CL_BLU"Cherrypicking OMX Patch - android_frameworks_native"$CL_RST
     cd native
     git fetch https://github.com/TeamCanjica/omni_frameworks_native android-4.4
-    git cherry-pick 58bfb612bc026521d43dbb80802fd2c009b034c9
+    git cherry-pick 90db937c9b944c87a386c2b5b713dae811cf69cc
     cd ..
     echo -e $CL_BLU"Cherrypicking RIL build error fix"$CL_RST
     cd opt/telephony
