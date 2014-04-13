@@ -127,6 +127,11 @@ then
     cd ..
   elif [ "$REPO_BRANCH" = "omni-4.4" ]
   then
+    echo -e $CL_BLU"Cherrypicking ART fix"$CL_RST
+    cd art
+    git fetch https://github.com/TeamCanjica/omni_art android-4.4
+    git cherry-pick e5d00edb9d6cff7845b72e32ed8e048e7234c688
+    cd ..
     echo -e $CL_BLU"Cherrypicking OMX Patch - android_frameworks_av"$CL_RST
     cd frameworks/av
     git fetch https://github.com/TeamCanjica/omni_frameworks_av android-4.4
