@@ -77,11 +77,6 @@ then
   cd frameworks/base
   git fetch https://github.com/TeamCanjica/android_frameworks_base cm-11.0
   git cherry-pick bb9d91d07fdc20c2443c9668e2f20e392b25bac4
-  cd ..
-  echo -e $CL_BLU"Cherrypicking Legacy sensors"$CL_RST
-  cd native
-  git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_native refs/changes/11/59311/1
-  git cherry-pick FETCH_HEAD
   cd ../..
     
   if [ "$REPO_BRANCH" = "cm-11.0" ]
