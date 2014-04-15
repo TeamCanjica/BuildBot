@@ -101,10 +101,6 @@ then
     git fetch http://review.cyanogenmod.org/CyanogenMod/android_system_vold refs/changes/15/56515/2
     git cherry-pick FETCH_HEAD
     cd ../..
-    cd frameworks/base
-    git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_base refs/changes/50/56950/4
-    git cherry-pick FETCH_HEAD
-    cd ../..
     echo -e $CL_BLU"Cherrypicking Low-InCall fix"$CL_RST
     cd packages/services/Telephony
     git fetch https://github.com/TeamCanjica/android_packages_services_Telephony cm-11.0
@@ -115,11 +111,6 @@ then
     git fetch https://github.com/TeamCanjica/android_hardware_libhardware_legacy cm-11.0
     git cherry-pick 9c2250d32a1eda9afe3b5cefe3306104148aa532
     cd ../..
-    echo -e $CL_BLU"Cherrypicking custom toolchain fix"$CL_RST
-    cd build
-    git fetch https://github.com/TeamCanjica/android_build cm-10.2
-    git cherry-pick 8f031162d08dadd1595d8c1e42d23134bbdb93d3
-    cd ..
   elif [ "$REPO_BRANCH" = "omni-4.4" ]
   then
     echo -e $CL_BLU"Cherrypicking ART fix"$CL_RST
