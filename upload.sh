@@ -19,6 +19,9 @@ else
   "janice")
     export FOLDER="26296"
     ;;
+  "janicep")
+    export FOLDER="35461"
+    ;;
   *)
     echo  -e $CL_YLW"Device upload not supported."$CL_RST
     echo  -e $CL_YLW"Upload skipped!"$CL_RST
