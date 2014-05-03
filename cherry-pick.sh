@@ -106,8 +106,9 @@ then
     git fetch http://review.cyanogenmod.org/CyanogenMod/android_system_vold refs/changes/15/56515/2
     git cherry-pick FETCH_HEAD
     cd ../..
+    echo -e $CL_BLU"Cherrypicking patch to reduce SystemUI crashes and freezes"$CL_RST
     cd frameworks/base
-    git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_base refs/changes/50/56950/4
+    git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_base refs/changes/34/63034/2
     git cherry-pick FETCH_HEAD
     cd ../..
     echo -e $CL_BLU"Cherrypicking Low-InCall fix"$CL_RST
