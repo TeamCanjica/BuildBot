@@ -94,7 +94,7 @@ then
     echo -e $CL_BLU"Cherrypicking OMX Patch - android_frameworks_av"$CL_RST
     cd frameworks/av
     git fetch https://github.com/TeamCanjica/android_frameworks_av cm-11.0
-    git cherry-pick 803bb5dd145630c0239a61bd4d58c3728f2dba57
+    git cherry-pick 5c4dd9cc832f47017df8930d77e2d175744af3eb
     cd ..
     echo -e $CL_BLU"Cherrypicking OMX Patch - android_frameworks_native"$CL_RST
     cd native
