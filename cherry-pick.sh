@@ -6,12 +6,6 @@ then
   cd frameworks/av
   git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_av refs/changes/21/46421/3
   git cherry-pick FETCH_HEAD
-# Use TeamCanjica frameworks_native until we fix buffers 
-#	cd ..
-#	echo -e $CL_BLU"Cherrypicking Oliver patches - android_frameworks_native"$CL_RST
-#	cd native
-#	git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_native refs/changes/20/46420/1
-#	git cherry-pick FETCH_HEAD
   cd ../..
   echo -e $CL_BLU"Cherrypicking Oliver patches - android_system_core"$CL_RST
   cd system/core
@@ -70,13 +64,13 @@ then
   echo -e $CL_BLU"Cherrypicking Core Patch - OMX and reboot/shutdown fix"$CL_RST
   cd system/core
   git fetch https://github.com/TeamCanjica/android_system_core cm-11.0
-  git cherry-pick 7bd81ee140c09066ede2ffab47da1a1c4e54e021
-  git cherry-pick b6cb91b1f70c969bb0f818a24111c0ca055be590
+  git cherry-pick 02f79390ff2d6a0e173d1dd8bfae02844d4c33a6
+  git cherry-pick 910ccc43a23b042df3df12ed1bbbe32954749e59
   cd ../..
   echo -e $CL_BLU"Cherrypicking OK Google patch"$CL_RST
   cd frameworks/base
   git fetch https://github.com/TeamCanjica/android_frameworks_base cm-11.0
-  git cherry-pick bb9d91d07fdc20c2443c9668e2f20e392b25bac4
+  git cherry-pick de30387b3c32c2a9cf653590c8454bd002bf0dd1
   cd ..
   echo -e $CL_BLU"Cherrypicking Legacy sensors"$CL_RST
   cd native
@@ -99,7 +93,7 @@ then
     echo -e $CL_BLU"Cherrypicking OMX Patch - android_frameworks_native"$CL_RST
     cd native
     git fetch https://github.com/TeamCanjica/android_frameworks_native cm-11.0
-    git cherry-pick 8dd8f0c8b8872affa37a2f50953f07d4815f2fec
+    git cherry-pick 213b1afc3177f483598e23b9d09738d29c8129cb
     cd ../..
     echo -e $CL_BLU"Cherrypicking vold patch to allow switching storages"$CL_RST
     cd system/vold
