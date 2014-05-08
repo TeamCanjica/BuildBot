@@ -115,6 +115,14 @@ then
     git fetch https://github.com/TeamCanjica/android_hardware_libhardware_legacy cm-11.0
     git cherry-pick 9c2250d32a1eda9afe3b5cefe3306104148aa532
     cd ../..
+      if [ "$DEVICE" = "janice" ] || [ "$DEVICE" = "janicep" ]
+      then
+        echo -e $CL_BLU"Cherrypicking default RGB Colors fix"$CL_RST
+        cd packages/apps/Settings
+        git fetch https://github.com/TeamCanjica/android_packages_apps_Settings cm-11.0
+        git cherry-pick 76ce30bca51cb4392d7fb4df97ea8eed27f03c2d
+        cd ../../..
+      fi
   elif [ "$REPO_BRANCH" = "omni-4.4" ]
   then
     echo -e $CL_BLU"Cherrypicking ART fix"$CL_RST
