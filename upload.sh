@@ -46,9 +46,9 @@ then
   else
     export UL_PATH=`find $WORKSPACE/$ROM_NAME/out/target/product/$DEVICE/ -name $PACKAGE_NAME*`
   fi
-  time devhost -u $DH_USER -p $DH_PASSWORD upload  $UL_PATH -f $FOLDER -d $DESC -pb  $DH_PUB
+  time devhost -u $DH_USER -p $DH_PASSWORD upload  $UL_PATH -f $FOLDER -d "$DESC" -pb  $DH_PUB
 else
-  time devhost -u $DH_USER -p $DH_PASSWORD upload  $WORKSPACE/$ROM_NAME/out/target/product/$DEVICE/$ROM_NAME-*.zip -f $FOLDER -d $DESC -pb  $DH_PUB
+  time devhost -u $DH_USER -p $DH_PASSWORD upload  $WORKSPACE/$ROM_NAME/out/target/product/$DEVICE/$ROM_NAME-*.zip -f $FOLDER -d "$DESC" -pb  $DH_PUB
 fi
 
 # Check if upload is finished corectly
