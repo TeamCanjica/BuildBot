@@ -115,11 +115,11 @@ then
     git fetch https://github.com/TeamCanjica/android_hardware_libhardware_legacy cm-11.0
     git cherry-pick 9c2250d32a1eda9afe3b5cefe3306104148aa532
     cd ../..
-    echo -e $CL_BLU"Cherrypicking recovery fix ( until it gets merged )"$CL_RST
-    cd build
-    git fetch http://review.cyanogenmod.org/CyanogenMod/android_build refs/changes/64/63664/1
-    git cherry-pick FETCH_HEAD
-    cd ..
+    echo -e $CL_BLU"Cherrypicking recovery fix"$CL_RST
+    cd bootable/recovery-cm
+    git fetch https://github.com/Rox-/android_bootable_recovery-cm cm-11.0
+    git cherry-pick 19759d61c5123d828bbc0cc9ef16988b0382978e
+    cd ../..
       if [ "$DEVICE" = "janice" ] || [ "$DEVICE" = "janicep" ]
       then
         echo -e $CL_BLU"Cherrypicking default RGB Colors fix"$CL_RST
