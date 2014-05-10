@@ -120,10 +120,6 @@ then
     git fetch https://github.com/Rox-/android_bootable_recovery-cm cm-11.0
     git cherry-pick 19759d61c5123d828bbc0cc9ef16988b0382978e
     cd ../..
-    cd build
-    git fetch https://github.com/Rox-/android_build cm-11.0
-    git cherry-pick cbc19b14c46be18abad68bb26b8770a75e8930e1
-    cd ..
       if [ "$DEVICE" = "janice" ] || [ "$DEVICE" = "janicep" ]
       then
         echo -e $CL_BLU"Cherrypicking default RGB Colors fix"$CL_RST
