@@ -61,6 +61,16 @@ fi
  
 if [ "$REPO_BRANCH" = "cm-11.0" ] || [ "$REPO_BRANCH" = "omni-4.4" ]
 then
+
+  if [ "$DEVICE" = "codina" ] || [ "$DEVICE" = "codinap" ]
+  then
+    echo -e $CL_BLU"Cherrypicking JustArchi's ArchiDroid Optimizations"$CL_RST
+    cd build
+    git fetch https://github.com/JustArchi/android_build android-4.4
+    git cherry-pick 8e1b82c082a8de9160e6c0fc3ded37b591c3e517
+  cd ..
+  fi
+
   echo -e $CL_BLU"Cherrypicking Core Patch - OMX and reboot/shutdown fix"$CL_RST
   cd system/core
   git fetch https://github.com/TeamCanjica/android_system_core cm-11.0
