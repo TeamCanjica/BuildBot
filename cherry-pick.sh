@@ -69,10 +69,6 @@ then
     git fetch https://github.com/JustArchi/android_build android-4.4
     git cherry-pick 0cf89401cc8092dda959b5746ec4899fda756cec
     cd ..
-    cd frameworks/rs
-    git fetch https://github.com/JustArchi/android_frameworks_rs android-4.4
-    git cherry-pick 525af84628f8db47688de392b13c1c2fa73854bb
-    cd ../..
     echo -e $CL_BLU"Cherrypicking ART compatibility fix with GCC 4.8"$CL_RST
     cd art
     git fetch https://github.com/JustArchi/android_art android-4.4
