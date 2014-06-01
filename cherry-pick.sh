@@ -64,10 +64,10 @@ then
 
   if [ "$DEVICE" = "codina" ] || [ "$DEVICE" = "codinap" ]
   then
-    echo -e $CL_BLU"Cherrypicking JustArchi's ArchiDroid Optimizations"$CL_RST
+    echo -e $CL_BLU"Cherrypicking JustArchi's ArchiDroid Optimizations V3"$CL_RST
     cd build
     git fetch https://github.com/JustArchi/android_build android-4.4
-    git cherry-pick 8e1b82c082a8de9160e6c0fc3ded37b591c3e517
+    git cherry-pick 0cf89401cc8092dda959b5746ec4899fda756cec
     cd ..
     cd frameworks/rs
     git fetch https://github.com/JustArchi/android_frameworks_rs android-4.4
