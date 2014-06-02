@@ -61,27 +61,22 @@ fi
  
 if [ "$REPO_BRANCH" = "cm-11.0" ] || [ "$REPO_BRANCH" = "omni-4.4" ]
 then
-
-  if [ "$DEVICE" = "codina" ] || [ "$DEVICE" = "codinap" ]
-  then
-    echo -e $CL_BLU"Cherrypicking JustArchi's ArchiDroid Optimizations V3"$CL_RST
-    cd build
-    git fetch https://github.com/JustArchi/android_build android-4.4
-    git cherry-pick 0cf89401cc8092dda959b5746ec4899fda756cec
-    cd ..
-    echo -e $CL_BLU"Cherrypicking ART compatibility fix with GCC 4.8"$CL_RST
-    cd art
-    git fetch https://github.com/JustArchi/android_art android-4.4
-    git cherry-pick 8354d2dc9d260ca67dbdf32e123bd4da62b8a68d
-    cd ..
-    echo -e $CL_BLU"Cherrypicking clang optimisation suppression patches"$CL_RST
-    cd external/clang
-    git fetch https://github.com/zwliew/android_external_clang cm-11.0
-    git cherry-pick bb0a1a5f007dc6e6f111c3a726977c4cce256bc5
-    git cherry-pick 085466671e3c0483466de009bbc81fd31505f6e6
-    cd ../..
-  fi
-
+  echo -e $CL_BLU"Cherrypicking JustArchi's ArchiDroid Optimizations V3"$CL_RST
+  cd build
+  git fetch https://github.com/JustArchi/android_build android-4.4
+  git cherry-pick 0cf89401cc8092dda959b5746ec4899fda756cec
+  cd ..
+  echo -e $CL_BLU"Cherrypicking ART compatibility fix with GCC 4.8"$CL_RST
+  cd art
+  git fetch https://github.com/JustArchi/android_art android-4.4
+  git cherry-pick 8354d2dc9d260ca67dbdf32e123bd4da62b8a68d
+  cd ..
+  echo -e $CL_BLU"Cherrypicking clang optimisation suppression patches"$CL_RST
+  cd external/clang
+  git fetch https://github.com/zwliew/android_external_clang cm-11.0
+  git cherry-pick bb0a1a5f007dc6e6f111c3a726977c4cce256bc5
+  git cherry-pick 085466671e3c0483466de009bbc81fd31505f6e6
+  cd ../..
   echo -e $CL_BLU"Cherrypicking Core Patch - OMX and reboot/shutdown fix"$CL_RST
   cd system/core
   git fetch https://github.com/TeamCanjica/android_system_core cm-11.0
