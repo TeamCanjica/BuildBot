@@ -76,6 +76,15 @@ then
   git fetch https://github.com/zwliew/android_external_clang cm-11.0
   git cherry-pick bb0a1a5f007dc6e6f111c3a726977c4cce256bc5
   git cherry-pick 085466671e3c0483466de009bbc81fd31505f6e6
+  cd ..
+  echo -e $CL_BLU"Cherrypicking exfat compilation fix"$CL_RST
+  cd fuse
+  git fetch https://github.com/SlimSaber/android_external_fuse kk4.4
+  git cherry-pick f3736cb1104f72ee1f1322a4eea79e960bee0cd6
+  cd ..
+  cd exfat
+  git fetch https://github.com/SlimSaber/android_external_exfat kk4.4
+  git cherry-pick 0cbb04e3fd9a254dbddf440355949383a9a00976
   cd ../..
   echo -e $CL_BLU"Cherrypicking Core Patch - OMX and reboot/shutdown fix"$CL_RST
   cd system/core
