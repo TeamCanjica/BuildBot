@@ -105,6 +105,11 @@ then
     
   if [ "$REPO_BRANCH" = "cm-11.0" ]
   then
+    echo -e $CL_BLU"Cherrypicking libjhead symlink patch"$CL_RST
+    cd external/jhead
+    git fetch https://github.com/akfaew/android_external_jhead cm-11.0
+    git cherry-pick 9d1169a729345b09656d7aaccc2cdebda67ee69b
+    cd ../..
     echo -e $CL_BLU"Cherrypicking ART fix"$CL_RST
     cd art
     git fetch https://github.com/cernekee/android_art monitor-stack-v1
