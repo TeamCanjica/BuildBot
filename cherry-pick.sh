@@ -132,11 +132,6 @@ then
     cd ../../..
       if [ "$DEVICE" = "janice" ] || [ "$DEVICE" = "janicep" ]
       then
-        echo -e $CL_BLU"Cherrypicking vibrator fix"$CL_RST
-        cd hardware/libhardware_legacy
-        git fetch https://github.com/TeamCanjica/android_hardware_libhardware_legacy cm-11.0
-        git cherry-pick 9c2250d32a1eda9afe3b5cefe3306104148aa532
-        cd ../..
         echo -e $CL_BLU"Cherrypicking default RGB Colors fix"$CL_RST
         cd packages/apps/Settings
         git fetch https://github.com/TeamCanjica/android_packages_apps_Settings cm-11.0
