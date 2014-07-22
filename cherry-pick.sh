@@ -68,8 +68,8 @@ then
   cd ..
   echo -e $CL_BLU"Cherrypicking ART compatibility fix with GCC 4.8"$CL_RST
   cd art
-  git fetch https://github.com/JustArchi/android_art android-4.4
-  git cherry-pick 8354d2dc9d260ca67dbdf32e123bd4da62b8a68d
+  git fetch https://github.com/JustArchi/android_art cm-11.0
+  git cherry-pick 71a0ca3057cc3865bd8e41dcb94443998d028407
   cd ..
   echo -e $CL_BLU"Cherrypicking clang optimisation suppression patches"$CL_RST
   cd external/clang
