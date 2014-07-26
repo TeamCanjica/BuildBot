@@ -89,8 +89,8 @@ then
   echo -e $CL_BLU"Cherrypicking Core Patch - OMX and reboot/shutdown fix"$CL_RST
   cd system/core
   git fetch https://github.com/TeamCanjica/android_system_core cm-11.0
-  git cherry-pick 02f79390ff2d6a0e173d1dd8bfae02844d4c33a6
-  git cherry-pick 910ccc43a23b042df3df12ed1bbbe32954749e59
+  git cherry-pick 8aa242d1827875506ce3339d2df3e0fed6f89e42
+  git cherry-pick 347658ad1b53234b52d32d42fba2a72878b883c5
   cd ../..
   echo -e $CL_BLU"Cherrypicking OK Google patch"$CL_RST
   cd frameworks/base
@@ -113,12 +113,12 @@ then
     echo -e $CL_BLU"Cherrypicking OMX Patch - android_frameworks_av"$CL_RST
     cd frameworks/av
     git fetch https://github.com/TeamCanjica/android_frameworks_av cm-11.0
-    git cherry-pick 5c4dd9cc832f47017df8930d77e2d175744af3eb
+    git cherry-pick 87618c1ea54009c2e5e5dfb60060f9cc2e9bcc52
     cd ..
     echo -e $CL_BLU"Cherrypicking OMX Patch - android_frameworks_native"$CL_RST
     cd native
     git fetch https://github.com/TeamCanjica/android_frameworks_native cm-11.0
-    git cherry-pick 213b1afc3177f483598e23b9d09738d29c8129cb
+    git cherry-pick f5a8698ce9a3568cea95c03302deb068eff765bd
     cd ../..
     echo -e $CL_BLU"Cherrypicking vold patch to allow switching storages"$CL_RST
     cd system/vold
