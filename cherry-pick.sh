@@ -170,11 +170,6 @@ then
     git fetch https://github.com/TeamCanjica/omni_packages_services_Telephony android-4.4
     git cherry-pick f65f8b9371add936e89a67319c8684b456cc467f
     cd ../../..
-    echo -e $CL_BLU"Cherrypicking vibrator fix"$CL_RST
-    cd hardware/libhardware_legacy
-    git fetch https://github.com/TeamCanjica/omni_hardware_libhardware_legacy android-4.4
-    git cherry-pick 2e71ea08a201040727f1e82768e9e50e1cf44fe9
-    cd ../..
   fi
 
 fi
