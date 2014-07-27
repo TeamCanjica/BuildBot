@@ -158,7 +158,7 @@ then
     echo -e $CL_BLU"Cherrypicking RIL build error fix"$CL_RST
     cd opt/telephony
     git fetch https://github.com/TeamCanjica/omni_frameworks_opt_telephony android-4.4
-    git cherry-pick 5e09e67658d95db425d3684e65fbcf73a3705a5b
+    git cherry-pick 776a1fab6285d2a4b09bd110f29853eb1b6b286e
     cd ../../..
     echo -e $CL_BLU"Cherrypicking vold patch to allow switching storages"$CL_RST
     cd system/vold
