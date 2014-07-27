@@ -163,7 +163,7 @@ then
     echo -e $CL_BLU"Cherrypicking vold patch to allow switching storages"$CL_RST
     cd system/vold
     git fetch http://github.com/TeamCanjica/omni_system_vold android-4.4
-    git cherry-pick e241d065c40385713c0628601a62f0d01fd20100
+    git cherry-pick 602501d7f73e26e2ae8d6712ca293a133ae9cd62
     cd ../..
     echo -e $CL_BLU"Cherrypicking Low-InCall fix"$CL_RST
     cd packages/services/Telephony
