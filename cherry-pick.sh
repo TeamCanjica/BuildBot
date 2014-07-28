@@ -16,11 +16,6 @@ fi
 
 if [ "$REPO_BRANCH" = "cm-10.2" ] || [ "$REPO_BRANCH" = "omni-4.3" ]
 then
-  echo -e $CL_BLU"Cherrypicking Oliver patches - android_system_core"$CL_RST
-  cd system/core
-  git fetch http://review.cyanogenmod.org/CyanogenMod/android_system_core refs/changes/34/52034/2
-  git cherry-pick FETCH_HEAD
-  cd ../..
 
   if [ "$REPO_BRANCH" = "cm-10.2" ]
   then
