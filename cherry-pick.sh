@@ -34,16 +34,6 @@ then
     git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_native refs/changes/33/52033/5
     git cherry-pick FETCH_HEAD
     cd ../..
-    echo -e $CL_BLU"Cherrypicking vibrator fix"$CL_RST
-    cd hardware/libhardware_legacy
-    git fetch https://github.com/TeamCanjica/android_hardware_libhardware_legacy cm-10.2
-    git cherry-pick 60207c7e08182e122030547cc3e22d8b27ec623b
-    cd ../..
-    echo -e $CL_BLU"Cherrypicking custom toolchain fix"$CL_RST
-    cd build
-    git fetch https://github.com/TeamCanjica/android_build cm-10.2
-    git cherry-pick 8f031162d08dadd1595d8c1e42d23134bbdb93d3
-    cd ..
     echo -e $CL_BLU"Cherrypicking low in-call volume fix"$CL_RST
     cd packages/apps/Phone
     git fetch https://github.com/TeamCanjica/android_packages_apps_Phone cm-10.2
