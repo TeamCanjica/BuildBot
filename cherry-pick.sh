@@ -71,10 +71,9 @@ then
   git fetch https://github.com/SlimSaber/android_external_exfat kk4.4
   git cherry-pick 0cbb04e3fd9a254dbddf440355949383a9a00976
   cd ../..
-  echo -e $CL_BLU"Cherrypicking Core Patch - OMX and reboot/shutdown fix"$CL_RST
+  echo -e $CL_BLU"Cherrypicking Core Patch - Reboot/shutdown fix"$CL_RST
   cd system/core
   git fetch https://github.com/TeamCanjica/android_system_core cm-11.0
-  git cherry-pick 8aa242d1827875506ce3339d2df3e0fed6f89e42
   git cherry-pick 347658ad1b53234b52d32d42fba2a72878b883c5
   cd ../..
   echo -e $CL_BLU"Cherrypicking OK Google patch"$CL_RST
@@ -102,8 +101,9 @@ then
     cd ..
     echo -e $CL_BLU"Cherrypicking OMX Patch - android_frameworks_native"$CL_RST
     cd native
-    git fetch https://github.com/TeamCanjica/android_frameworks_native cm-11.0
-    git cherry-pick f5a8698ce9a3568cea95c03302deb068eff765bd
+    git fetch https://github.com/TeamCanjica/android_frameworks_native cm-11.0-te
+    git cherry-pick 0c5f79104778f6adc48493a0537cee8d091634aa
+    git cherry-pick 778148637ef21c48a5f99bfde2b2e9a71daee0f7
     cd ../..
     echo -e $CL_BLU"Cherrypicking vold patch to allow switching storages"$CL_RST
     cd system/vold
