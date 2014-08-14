@@ -97,12 +97,10 @@ then
     echo -e $CL_BLU"Cherrypicking OMX Patch - android_frameworks_av"$CL_RST
     cd frameworks/av
     git fetch https://github.com/TeamCanjica/android_frameworks_av cm-11.0
-    git cherry-pick 87618c1ea54009c2e5e5dfb60060f9cc2e9bcc52
     cd ..
     echo -e $CL_BLU"Cherrypicking OMX Patch - android_frameworks_native"$CL_RST
     cd native
     git fetch https://github.com/TeamCanjica/android_frameworks_native cm-11.0-te
-    git cherry-pick 8a7553104e96a7490c89af527a3ea404363674b9
     cd ../..
     echo -e $CL_BLU"Cherrypicking vold patch to allow switching storages"$CL_RST
     cd system/vold
