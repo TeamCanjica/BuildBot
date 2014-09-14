@@ -46,31 +46,6 @@ fi
  
 if [ "$REPO_BRANCH" = "cm-11.0" ] || [ "$REPO_BRANCH" = "omni-4.4" ]
 then
-  echo -e $CL_BLU"Cherrypicking JustArchi's ArchiDroid Optimizations V3"$CL_RST
-  cd build
-  git fetch https://github.com/TeamCanjica/android_build cm-11.0
-  git cherry-pick dbe7e5b4fff354cd9a9ef2e6605fa7db7eef9727
-  cd ..
-  echo -e $CL_BLU"Cherrypicking ART compatibility fix with GCC 4.8"$CL_RST
-  cd art
-  git fetch https://github.com/JustArchi/android_art cm-11.0
-  git cherry-pick 71a0ca3057cc3865bd8e41dcb94443998d028407
-  cd ..
-  echo -e $CL_BLU"Cherrypicking clang optimisation suppression patches"$CL_RST
-  cd external/clang
-  git fetch https://github.com/zwliew/android_external_clang cm-11.0
-  git cherry-pick bb0a1a5f007dc6e6f111c3a726977c4cce256bc5
-  git cherry-pick 085466671e3c0483466de009bbc81fd31505f6e6
-  cd ..
-  echo -e $CL_BLU"Cherrypicking exfat compilation fix"$CL_RST
-  cd fuse
-  git fetch https://github.com/SlimSaber/android_external_fuse kk4.4
-  git cherry-pick f3736cb1104f72ee1f1322a4eea79e960bee0cd6
-  cd ..
-  cd exfat
-  git fetch https://github.com/SlimSaber/android_external_exfat kk4.4
-  git cherry-pick 0cbb04e3fd9a254dbddf440355949383a9a00976
-  cd ../..
   echo -e $CL_BLU"Cherrypicking Core Patch - Reboot/shutdown fix"$CL_RST
   cd system/core
   git fetch https://github.com/TeamCanjica/android_system_core cm-11.0
