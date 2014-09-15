@@ -79,6 +79,7 @@ then
     git fetch https://github.com/TeamCanjica/android_frameworks_native cm-11.0-te
     git cherry-pick 6e61e3f8f206ce9f09f1da6da14432bb417ce8e1
     git cherry-pick 47dcae2609ca4ce1a25e0e9c154bc9c42e4b6774
+    git cherry-pick f635e67a85bd8abbbea184c517d46e7934b3f35a
     cd ../..
     echo -e $CL_BLU"Cherrypicking vold patch to allow switching storages"$CL_RST
     cd system/vold
