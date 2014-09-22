@@ -79,6 +79,12 @@ then
 fi
 
 #DEFAULT VALUES
+#Cherrypick
+if [ -z "$CHERRYPICK" ]
+then
+  export CHERRYPICK="false"
+fi
+
 # Kernel only
 if [ -z "$KERNEL_ONLY" ]
 then
