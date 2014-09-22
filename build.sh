@@ -48,9 +48,11 @@ then
 fi
 
 # Cherrypicking
+if [ $CHERRYPICK = "true" ]
 . $WORKSPACE/BuildBot/cherry-pick.sh
 check_result "Cherrypicking failed!"
 echo -e $CL_GRN"Cherrypicking Complete"$CL_RST
+fi
 
 # Get prebuilts
 if [ $ROM_NAME = "cm" ]
