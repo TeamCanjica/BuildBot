@@ -74,6 +74,7 @@ then
     cd frameworks/av
     git fetch https://github.com/TeamCanjica/android_frameworks_av cm-11.0
     git cherry-pick 87618c1ea54009c2e5e5dfb60060f9cc2e9bcc52
+    git cherry-pick cfcb60d66b01783c274dc625bf32a44899d1e603
     cd ..
     echo -e $CL_BLU"Cherrypicking OMX Patch - android_frameworks_native"$CL_RST
     cd native
