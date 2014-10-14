@@ -93,7 +93,7 @@ then
   fi
 else
   echo -e $CL_MAG"Building..."$CL_RST
-  time make -j8 bacon
+  time mka bacon
   check_result "Build failed!"
   echo -e $CL_GRN""$DEVICE" build finished!"$CL_RST
 fi
