@@ -87,7 +87,12 @@ then
     exit 1
   else
     echo -e $CL_BLU"Building single package only: $PACKAGE_NAME"$CL_RST
-    time mka $PACKAGE_NAME
+      if [ $MMM = "true"]
+      then
+        time mmm $PACKAGE_NAME
+      else
+        time mka $PACKAGE_NAME
+      fi
     check_result "Build failed!"c
     echo -e $CL_GRN"Package build finished!"$CL_RST
   fi
