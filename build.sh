@@ -48,7 +48,7 @@ then
 fi
 
 # Cherrypicking
-if [ $CHERRYPICK = "true" ]
+if [ "$CHERRYPICK" = "true" ]
 then
 . $WORKSPACE/BuildBot/cherry-pick.sh
 check_result "Cherrypicking failed!"
@@ -79,7 +79,7 @@ else
 fi
 
 # Start Build
-if [ $SINGLE_PACKAGE = "false" ]
+if [ "$SINGLE_PACKAGE" = "false" ]
 then
   echo -e $CL_MAG"Building..."$CL_RST
   time mka bacon
