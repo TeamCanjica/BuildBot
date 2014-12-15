@@ -33,24 +33,21 @@ fi
 
 # Rom name and build directory
 case $REPO_BRANCH in
-
-
 "cm-"*)
-  export ROM_NAME="cm"  ;;
-  
+  export ROM_NAME="cm"
+  ;;
 "jellybean"*)
-  export ROM_NAME="cm"  ;;
-  
+  export ROM_NAME="cm"
+  ;;
 "phablet"*)
-  export ROM_NAME="cm"  ;;
-  
+  export ROM_NAME="cm"
+  ;; 
 "omni-"*)
-  export ROM_NAME="omni"  ;;
-
+  export ROM_NAME="omni"
+  ;;
 *)
   echo  -e $CL_RED"ROM not supported. Define ROM name in variables.sh."$CL_RST
   exit 1  ;;
-  
 esac
 
 # Device name to build
@@ -79,12 +76,6 @@ then
 fi
 
 #DEFAULT VALUES
-#Cherrypick
-if [ -z "$CHERRYPICK" ]
-then
-  export CHERRYPICK="false"
-fi
-
 # Kernel only
 if [ $KERNEL_ONLY = "true" ]
 then
@@ -101,12 +92,6 @@ fi
 if [ -z "$SYNC" ]
 then
   export SYNC="true"
-fi
-
-# Upload
-if [ -z "$UPLOAD" ]
-then
-  export UPLOAD="true"
 fi
 
 # Upload description
