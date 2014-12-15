@@ -1,13 +1,14 @@
 BuildBot
 ========
 
+---------------------------------------------------------------
 First starting on Jenkins
 
 Execute shell :
 
       git clone https://github.com/TeamCanjica/BuildBot.git
       
-After that 
+--------------------------------------------------------------
 
 Execute shell:
 
@@ -16,6 +17,7 @@ Execute shell:
       
       $WORKSPACE/BuildBot/job.sh
       
+--------------------------------------------------------------
 Parameters:
 
       Choice - DEVICE
@@ -27,8 +29,8 @@ Parameters:
       Bool   - UL_ONLY*
       Bool   - SYNC*
       Bool   - KERNEL_ONLY*
-      Bool   - SINGLE_PACKAGE*
       Text   - DESC *
       Text   - PACKAGE_NAME*
 
 *If not selected, default values are used
+--------------------------------------------------------------
