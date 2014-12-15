@@ -79,26 +79,20 @@ else
 fi
 
 # Start Build
-if [ $SINGLE_PACKAGE = "true" ]
+if [ $SINGLE_PACKAGE = "false" ]
 then
-  if [ $PACKAGE_NAME = "" ]
-  then
-    echo -e $CL_RED"Package name not specified!"
-    exit 1
-  else
-    echo -e $CL_BLU"Building single package only: $PACKAGE_NAME"$CL_RST
-      if [ $MMM = "true"]
-      then
-        time mmm $PACKAGE_NAME
-      else
-        time mka $PACKAGE_NAME
-      fi
-    check_result "Build failed!"c
-    echo -e $CL_GRN"Package build finished!"$CL_RST
-  fi
-else
   echo -e $CL_MAG"Building..."$CL_RST
   time mka bacon
   check_result "Build failed!"
   echo -e $CL_GRN""$DEVICE" build finished!"$CL_RST
+else
+  echo -e $CL_BLU"Building single package only: $PACKAGE_NAME"$CL_RST
+  if [ $PACKAGE_NAME = "*/*" ]
+  then
+    time mmm $PACKAGE_NAME
+  else
+    time mka $PACKAGE_NAME
+  fi
+  check_result "Build failed!"c
+  echo -e $CL_GRN"Package build finished!"$CL_RST
 fi
