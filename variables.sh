@@ -99,7 +99,7 @@ then
 fi
 
 # Single package
-if [ -z "$SINGLE_PACKAGE" ]
+if [ -z "$PACKAGE_NAME" ]
 then
   export SINGLE_PACKAGE="false"
 fi
